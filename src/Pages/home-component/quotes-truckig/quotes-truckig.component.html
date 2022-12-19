@@ -1,0 +1,158 @@
+<!-- Navbar -->
+<app-navbar [type]="false"></app-navbar>
+
+<div id="home" class="bg-section" [style.backgroundImage]="'url(assets/images/bg-section-6.png)'">
+  <div class="container h-100">
+    <div class="row h-100">
+      <div id="col" class="col-md-12 my-auto">
+        <div class="cont-home text-center">
+          <h1>Truking Insurance</h1>
+          <h2>Tucson Arizona</h2>
+          <div class="bb-red-light"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="about-us">
+  <div class="container">
+    <div class="row">
+      <table class="table table-hover table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Date</th>
+            <th scope="col">Name</th>
+            <th scope="col">Business</th>
+            <th scope="col">Phone</th>
+            <th scope="col">email</th>
+            <th scope="col">USDOT Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of applies;let i=index;">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.create_date | date: 'dd/MM/yyyy' }}</td>
+            <td>{{item.name}} {{item.middle_name}} {{item.last_name}}</td>
+            <td>{{item.business_name}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.usdot}}</td>
+
+        
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div id="map-section">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16064.654442777364!2d-110.97546422773758!3d32.17248569158573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86d67a0a94736425%3A0x3904c21f2546dd10!2sBuy%20LowCost%20Insurance!5e0!3m2!1ses!2smx!4v1574758470656!5m2!1ses!2smx"
+    frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+</div>
+
+
+<div id="contact" class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <nav class="navbar text-center p-0">
+          <h4>Menu</h4>
+          <!-- Links -->
+          <ul class="navbar-nav w-100 p-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about-us">ABOUT US</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#insurances">INSURANCE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#helpful-links">CUSTOMER SERVICE</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#contact">CONTACT US</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-md-4 locations">
+        <h4>Locations</h4>
+        <h6>SOUTH SIDE ADDRESS</h6>
+        <p>505 W AJO WAY TUCSON AZ 85713</p>
+        <h6>PHONE</h6>
+        <p>(520)-807-0619</p>
+        <br>
+        <h6>EAST SIDE ADDRESS </h6>
+        <p>702 S CRAYCROFT RD TUCSON , AZ
+          85711 , SUITE A</p>
+        <h6>PHONE</h6>
+        <p>(520)-807-0619</p>
+
+        <h6>NORTH SIDE ADDRESS </h6>
+        <p>1380 W PRINCE RD TUCSON , AZ
+          85705 </p>
+        <h6>PHONE</h6>
+        <p>(520)-807-0619</p>
+        <p>COMING SOON</p>
+      </div>
+      <div class="col-md-4">
+        <h4>Requests</h4>
+        <p class="text-left color-gray-light2">
+          Need Help, have a Question, or want to share your opinion or some
+          feedback with Us?. Give us a call or send us a messsage. We're Happy to
+          Help in any way we can. Our Hours : Monday - Friday 9:00 am - 7:00 pm
+          Saturday 9:00 am - 5:00 pm.
+        </p>
+        <!-- Links -->
+        <form id="form-contact">
+          <div class="row">
+            <div class="col-xs-12 col-md-12">
+              <div class="form-group">
+                <input type="text" class="form-control" id="full_name" placeholder="Full name">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-12">
+              <div class="form-group">
+                <input type="text" class="form-control" id="phone" placeholder="Phone">
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-12">
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-12">
+              <div class="form-group">
+                <textarea class="form-control" id="message" rows="4" placeholder="Message"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-right">
+              <button type="submit" class="btn btn-shop-sm">Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <app-footer></app-footer>
+</div>

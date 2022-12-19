@@ -1,0 +1,108 @@
+@import "../../variables.scss";
+
+.nav-cart{
+    line-height: 2.5rem;
+    -webkit-transition: font-size .5s, line-height 0.3s ease-in-out; /* For Safari 3.1 to 6.0 */
+    transition: font-size .5s, line-height 0.3s ease-in-out;
+}
+
+.bg-gray-dark{
+    color: $gray-light;
+    background-color: $gray-dark;
+}
+
+.bb-gray-light{
+    border-bottom: solid 2px $gray-light2;
+}
+.navbar{
+    a{
+        font-family: 'roboto-light';
+        color: $gray-light;
+    }
+    .dropdown-menu{
+        a{
+            font-family: 'roboto-bold';
+            color: $gray-light3;
+        }
+    }
+}
+.blacknav{
+    
+        background-color: #0a0a0a !important;
+       padding-top:0rem !important;
+        
+  
+}
+.cont-menu{
+    color: $gray-light;
+    background-color: transparent;
+    padding-top: 4rem;
+    -webkit-transition: background-color .5s, padding-top .5s; /* transition is set to 'font-size 12s' */
+    transition: background-color .5s, padding-top .5s;
+    .navbar-brand{
+        img{
+            width: 16rem;
+            -webkit-transition: width .5s; /* For Safari 3.1 to 6.0 */
+            transition: width .5s;
+        }
+    }
+    
+    .navbar-nav{
+        .nav-item{
+            font-size: .9rem;
+            margin-left: 2rem;
+            a{
+                color: $blanco;
+                font-family: 'raleway-extrabold';
+                -webkit-transition: font-size .5s; /* transition is set to 'font-size 12s' */
+                transition: font-size .5s;
+            }
+        }
+        .nav-item.active{
+            //border-bottom: solid 2px $gray-light;
+            a{
+                color: $red-light;
+            }
+        }
+    }
+}
+.menu-sm{
+    .nav-cart{
+        line-height: 1rem;
+        font-size: .8rem;
+    }
+    .cont-menu{
+        padding-top: 0;
+        background-color: rgba(0,0,0,.5);
+        .navbar-brand{
+            img{
+                width: 12rem;
+            }
+        }
+        .navbar-nav{
+            .nav-item{
+                font-size: .8rem;
+            }
+        }
+    }
+}
+
+#dropdownMenuButton{
+    color: $gray-light;
+}
+
+@media (max-width: 992px) {
+    #menu{
+        background-color: rgba(0,0,0,.5);
+        a{
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .nav-cart{
+            .nav-item{
+                text-align: center;
+            }
+        }
+    }
+}

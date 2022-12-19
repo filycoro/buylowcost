@@ -1,0 +1,30 @@
+@import "../../variables.scss";
+
+footer{
+    //margin-top: 4rem;
+    border-top: solid 1px $gray-light2;
+    font-size: 1rem;
+    color: $gray-light2;
+    line-height: 4rem;
+    margin-top: 4rem;
+    .share{
+        font-family: 'roboto-bold';
+        button{
+            padding: 0;
+            width: 2rem;
+            height: 2rem;
+            margin-left: 2rem;
+            border-radius: 100%;
+            text-align: center;
+            border: solid 2px $gray-light;
+            color: $gray-light;
+            i{
+                vertical-align: middle;
+            }
+        }
+        button:hover{
+            border: solid 2px $red-light;
+            color: $red-light;
+        }
+    }
+}
