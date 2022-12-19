@@ -1,0 +1,110 @@
+<div class="fixed-top" id="menu">
+  <div class="container-fluid bg-gray-dark">
+    <div class="container">
+
+      <div class="row nav-cart">
+
+        <div class="col-md-12 text-right">
+
+      
+
+          <nav class="navbar navbar-expand-lg navbar-dark">
+           
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav m-auto">
+                <li class="nav-item">
+                  <a class="nav-link color-grat-light" href="#">
+                    <i class="far fa-envelope"></i>
+                    contact@buylowins.com
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link color-grat-light" href="#">CALL FOR FREE QUOTES! (520) 807 0619 </a>
+                </li>
+
+                <!--<li class="nav-item">
+                  <a class="nav-link color-grat-light2" href="#">Attention Lienholders</a>
+                </li>--->
+                <li class="nav-item">
+                  <a class="nav-link color-grat-light2" href="#">HABLAMOS ESPAÑOL!</a>
+                </li>
+                <!--<li class="nav-item">
+                  <div class="dropdown d-inline-block">
+                      <button class="btn dropdown-toggle color-grat-light2 pt-0 pb-0 align-bottom" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-globe"></i>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#" (click)="languageService.changeLanguage('en')">English</a>
+                          <a class="dropdown-item" href="#" (click)="languageService.changeLanguage('es')">Spanish</a>
+                      </div>
+                  </div>
+                </li>-->
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div  [ngClass]="{'blacknav' : InverseStyle==true}" class="cont-menu">
+    <nav  class="container navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#">
+        <img *ngIf="type" src="assets/images/Recurso 1.png" alt="">
+        <img *ngIf="!type" src="assets/images/Recurso_3.png" alt="">
+      </a>
+
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link menu-link" href="#home">HOME <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link menu-link" href="#about-us">ABOUT US</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link menu-link" href="#insurances">INSURANCE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link menu-link" href="#helpful-links">CUSTOMER SERVICE</a>
+          </li>
+
+          <li class="nav-item">
+            <a target="_blank" class="nav-link menu-link" href="#/careers">CAREERS</a>
+          </li>
+          
+          <li class="nav-item">
+            <a target="_blank" class="nav-link menu-link" href="#/locations">LOCATIONS</a>
+          </li>
+         <!-- <div class="dropdown">
+            <button style="background-color: transparent; border-style: none;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              PARTNERS
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a target="_blank" class="nav-link menu-link" href="#/Partnerships"> <img   style="width: 150px;" src="https://1stoptitleloans.com/wp-content/uploads/2018/09/logo.jpg"></a>
+            </div>
+          </div>-->
+         
+          
+          <li class="nav-item">
+            <a  class="nav-link menu-link" href="#contact">CONTACT US</a>
+          </li>
+        </ul>
+      </div>
+      <!--<a class="navbar-brand" href="#">
+        <a  href="https://1stoptitleloans.com/" ><img  style="position: relative;left: 22%;" src="assets/images/Recurso-5.png" alt=""></a>
+      </a>-->
+
+    </nav>
+  </div>
+</div>

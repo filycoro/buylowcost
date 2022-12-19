@@ -1,0 +1,41 @@
+$gray-light: #eeeeee;
+$gray-light1: #cccccc;
+$gray-light2: #9e9e9e;
+$gray-light3: #717171;
+$gray-light4: #363636;
+$gray-dark: #161616;
+$blue-light: #77bffc;
+$blue-light2: #5799e5;
+$blanco: #ffffff;
+$red-light: #bc2132;
+$green-light: #8dc63f;
+
+@font-face {
+    font-family: 'roboto-light'; 
+    src: url("/assets/fonts/roboto/Roboto-Light.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'roboto-regular'; 
+    src: url("/assets/fonts/roboto/Roboto-Regular.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'roboto-bold'; 
+    src: url("/assets/fonts/roboto/Roboto-Bold.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'raleway-extrabold'; 
+    src: url("/assets/fonts/raleway/Raleway-ExtraBold.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'raleway-extralight'; 
+    src: url("/assets/fonts/raleway/Raleway-ExtraLight.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'raleway-bold'; 
+    src: url("/assets/fonts/raleway/Raleway-Bold.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'raleway-semibold'; 
+    src: url("/assets/fonts/raleway/Raleway-SemiBold.ttf") format('truetype');
+}
