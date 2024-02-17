@@ -23,7 +23,15 @@
         margin-bottom: 4rem;
     }
 }
+.cont-home > h1{
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+}
 
+.cont-home > h2{
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
 #about-us {
     padding-top: 6rem;
     .container {
