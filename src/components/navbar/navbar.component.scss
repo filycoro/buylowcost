@@ -52,7 +52,7 @@
             font-size: .9rem;
             margin-left: 2rem;
             a{
-                color: $black;
+                color:#ffffff;
                 font-family: 'raleway-extrabold';
                 -webkit-transition: font-size .5s; /* transition is set to 'font-size 12s' */
                 transition: font-size .5s;
@@ -61,7 +61,11 @@
         .nav-item.active{
             //border-bottom: solid 2px $gray-light;
             a{
-                color: $red-light;
+
+              color: #357765;
+              background-color: white;
+              border-radius: 5px;
+
             }
         }
     }
@@ -73,10 +77,10 @@
     }
     .cont-menu{
       padding-top: 0;
-      background-color: rgb(255 255 255);
+      background-color: #397464;
         .navbar-brand{
             img{
-                width: 12rem;
+                width: 5rem;
             }
         }
         .navbar-nav{

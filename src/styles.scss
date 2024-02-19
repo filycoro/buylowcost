@@ -132,6 +132,14 @@ html {
         padding-right: 2rem;
         -webkit-appearance: none;
     }
+    .btn-green{
+      border-radius: 10rem;
+      color: $blanco;
+      background:  $green-black;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      -webkit-appearance: none;
+    }
     .bb-red-light {
         border-bottom: solid 2px $red-light;
     }

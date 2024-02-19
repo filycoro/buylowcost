@@ -23,15 +23,7 @@
         margin-bottom: 4rem;
     }
 }
-.cont-home > h1{
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: black;
-}
 
-.cont-home > h2{
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-}
 #about-us {
     padding-top: 6rem;
     .container {
@@ -104,11 +96,11 @@
         margin: 0 auto;
         cursor: pointer;
         border: none;
-        background-color: transparent;
+        background-color: #397464;
         color: $blanco;
         .card-icon {
-            height: 6rem;
-            width: 6rem;
+            height: 7rem;
+            width: 7rem;
             font-size: 2rem;
             background-color: $blanco;
             color: $gray-light4;
@@ -116,7 +108,7 @@
             text-align: center;
             margin: 0 auto;
             margin-bottom: 2rem;
-            border-radius: 100%;
+            //border-radius: 100%;
         }
         .bb-red-light {
             width: 5rem;
@@ -128,7 +120,7 @@
     }
     .card:hover {
         .card-icon {
-            background-color: transparent;
+           // background-color: transparent;
             color: $red-light;
             border: solid 2px $red-light;
         }
@@ -173,6 +165,44 @@
             }
         }
     }
+}
+
+
+.bacanora_list {
+  font-family: "roboto-bold";
+  h1 {
+      font-family: "raleway-bold";
+      color: #397464;
+  }
+  p {
+      color: black;
+  }
+  .bb-gray-light3 {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      width: 5rem;
+  }
+  ul {
+      color: black;
+      list-style: none;
+      padding-left: 0;
+        li:before {
+          content: '✓';
+          color: #397464;
+          font-size: 1.5rem;
+          font-weight: bold;
+      }
+      li {
+          font-family: "roboto-regular";
+          font-size: 1.5rem;
+          small {
+              color: $green-light;
+              i {
+                  font-size: 0.8rem;
+              }
+          }
+      }
+  }
 }
 
 #map-section {
@@ -264,4 +294,30 @@
 }
 .color-3 {
     color: #bc2132;
+}
+.img-cont{
+  text-align: center;
+//  background: white;
+  width: 100%;
+  padding: 13px;
+
+
+}
+.blanco{
+   // background-image: url('assets/images/Blaco-frente.png');
+    height: 20rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 12px;
+}
+.green_title{
+  font-family: "raleway-extrabold";
+  transition: font-size 0.5s;
+  color: #397464;
+}
+.custom_ul{
+   color: #9e9e9e;
+    list-style: none;
+    padding-left: 0;
 }
