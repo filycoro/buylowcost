@@ -46,21 +46,21 @@ html {
     }
 
     /* p {
-    
+
     font-size: $paragraph-font-size-lg;
-    
+
     @media (max-width: 1024px) {
         font-size: $paragraph-font-size-md;
     }
-    
+
     @media (max-width: 640px) {
         font-size: $paragraph-font-size-sm;
     }
-    
+
     @media (max-width: 480px) {
         font-size: $paragraph-font-size-xs;
     }
-    
+
 } */
     .cont-owl {
         /* padding-left: 6rem;
@@ -127,7 +127,7 @@ html {
     .btn-red {
         border-radius: 10rem;
         color: $blanco;
-        background-color: $red-light;
+        background: $red-black;
         padding-left: 2rem;
         padding-right: 2rem;
         -webkit-appearance: none;

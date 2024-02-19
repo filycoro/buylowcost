@@ -7,35 +7,37 @@ $gray-dark: #161616;
 $blue-light: #77bffc;
 $blue-light2: #5799e5;
 $blanco: #ffffff;
+$black: #161616;
 $red-light: #bc2132;
+$red-black:linear-gradient(190deg, #d31317, #28191bf0);
 $green-light: #8dc63f;
 
 @font-face {
-    font-family: 'roboto-light'; 
+    font-family: 'roboto-light';
     src: url("/assets/fonts/roboto/Roboto-Light.ttf") format('truetype');
 }
 @font-face {
-    font-family: 'roboto-regular'; 
+    font-family: 'roboto-regular';
     src: url("/assets/fonts/roboto/Roboto-Regular.ttf") format('truetype');
 }
 @font-face {
-    font-family: 'roboto-bold'; 
+    font-family: 'roboto-bold';
     src: url("/assets/fonts/roboto/Roboto-Bold.ttf") format('truetype');
 }
 
 @font-face {
-    font-family: 'raleway-extrabold'; 
+    font-family: 'raleway-extrabold';
     src: url("/assets/fonts/raleway/Raleway-ExtraBold.ttf") format('truetype');
 }
 @font-face {
-    font-family: 'raleway-extralight'; 
+    font-family: 'raleway-extralight';
     src: url("/assets/fonts/raleway/Raleway-ExtraLight.ttf") format('truetype');
 }
 @font-face {
-    font-family: 'raleway-bold'; 
+    font-family: 'raleway-bold';
     src: url("/assets/fonts/raleway/Raleway-Bold.ttf") format('truetype');
 }
 @font-face {
-    font-family: 'raleway-semibold'; 
+    font-family: 'raleway-semibold';
     src: url("/assets/fonts/raleway/Raleway-SemiBold.ttf") format('truetype');
 }

@@ -27,11 +27,11 @@
     }
 }
 .blacknav{
-    
+
         background-color: #0a0a0a !important;
        padding-top:0rem !important;
-        
-  
+
+
 }
 .cont-menu{
     color: $gray-light;
@@ -46,13 +46,13 @@
             transition: width .5s;
         }
     }
-    
+
     .navbar-nav{
         .nav-item{
             font-size: .9rem;
             margin-left: 2rem;
             a{
-                color: $blanco;
+                color: $black;
                 font-family: 'raleway-extrabold';
                 -webkit-transition: font-size .5s; /* transition is set to 'font-size 12s' */
                 transition: font-size .5s;
@@ -72,8 +72,8 @@
         font-size: .8rem;
     }
     .cont-menu{
-        padding-top: 0;
-        background-color: rgba(0,0,0,.5);
+      padding-top: 0;
+      background-color: rgb(255 255 255);
         .navbar-brand{
             img{
                 width: 12rem;
