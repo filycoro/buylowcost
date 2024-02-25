@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from '../app/app-routing.module';
 import { HelpfulLinksComponent } from './helpful-links/helpful-links.component';
 
+
 @NgModule({
     imports: [
         CommonModule,
@@ -25,7 +26,8 @@ import { HelpfulLinksComponent } from './helpful-links/helpful-links.component';
         SliderComponent,
         NavbarComponent,
         FooterComponent,
-        HelpfulLinksComponent
+        HelpfulLinksComponent,
+      
     ],
     providers: [],
  })
