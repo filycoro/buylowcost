@@ -146,14 +146,14 @@
                 {{ bacanora.descripcion[4] }}
               </li>
               <li>
-                {{ bacanora.descripcion[5] }}
+                {{ bacanora.descripcion[5] }} MXN
               </li>
               <li>
                 {{ bacanora.descripcion[6] }}
               </li>
             </ul>
 
-            <button _ngcontent-okv-c2="" class="btn btn-green" type="button" data-toggle="modal"
+            <button _ngcontent-okv-c2="" class="btnBotella btn-green" type="button" data-toggle="modal"
               data-target="#modalAbandonedCart" (click)="AddtoCart(bacanora.id)">Añadir</button>
 
           </div>
@@ -493,42 +493,91 @@
       <!--Body-->
       <div class="modal-body">
 
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Nombre</th>
-              <th>Precio</th>
-              <th>Cantidad</th>
-              <th>Remove</th>
-            </tr>
-          </thead>
-          <tbody *ngIf="listaItemsCarrito && listaItemsCarrito.length >  0; else emptyCar">
-            <tr *ngFor="let producto of listaItemsCarrito; let i = index">
+
+
+        <!--            <tr *ngFor="let producto of listaItemsCarrito; let i = index">
               <th scope="row">{{ i + 1 }}</th>
               <td><img src="{{ producto.imgUrl }}" alt="{{ producto.titulo }}" height="50" width="50">
                 {{ producto.titulo }}</td>
               <td>{{ producto.descripcion[5] }} c/u</td>
               <td>{{ producto.cantidad_compra }}</td>
-              <td><a><i class="fas fa-times"></i></a></td>
+              <td>
+                <a (click)="eliminarElementoPorId(producto.id)" class="eliminar-icon">
+                  <i class="fas fa-times"></i>
+                </a>
+              </td>
             </tr>
             <tr class="total">
               <th scope="row">{{ listaItemsCarrito.length + 1 }}</th>
               <td>Total</td>
               <td>{{ calcularTotal() }} $</td>
               <td></td>
-            </tr>
-          </tbody>
-          <ng-template #emptyCar>
-            <p>No hay elementos en el carrito.</p>
-          </ng-template>
-        </table>
+            </tr>-->
+
+        <div *ngIf="listaItemsCarrito && listaItemsCarrito.length >  0; else emptyCar" class="card">
+          <div class="row">
+            <div class="col-md-8 cart">
+              <div class="title">
+                <div class="row">
+                  <div class="col">
+                    <h4><b>Botellas</b></h4>
+                  </div>
+                  <div class="col align-self-center text-right text-muted">{{ listaItemsCarrito.length }}</div>
+                </div>
+              </div>
+              <div *ngFor="let producto of listaItemsCarrito; let i = index" class="row border-top border-bottom">
+                <div class="row main align-items-center">
+                  <div class="col-2"><img class="img-fluid" src="{{ producto.imgUrl }}"></div>
+                  <div class="col">
+                    <div class="row ">{{ producto.titulo }}</div>
+                    <div class="row text-muted">{{ producto.descripcion[4] }}</div>
+                  </div>
+                  <div class="col">
+                    <a (click)="restarCantidad(producto.id)">-</a><a  class="border">{{ producto.cantidad_compra }}</a><a (click)="sumarCantidad(producto.id)">+</a>
+                  </div>
+                  <div class="col">{{ calcularSubTotal(producto.id) }} $<span class="close"
+                      (click)="eliminarElementoPorId(producto.id)">&#10005;</span></div>
+                </div>
+              </div>
+
+              <!--<div class="back-to-shop"><a href="#"></a><span class="text-muted">Back to shop</span></div>-->
+            </div>
+            <div class="col-md-4 summary">
+              <div>
+                <h5><b>Summary</b></h5>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col" style="padding-left:0;">Productos </div>
+                <div class="col text-right"> {{ listaItemsCarrito.length }}</div>
+              </div>
+              <form>
+                <p>SHIPPING</p>
+                <select>
+                  <option class="text-muted">Standard-Delivery- &euro;5.00</option>
+                </select>
+                <p>GIVE CODE</p>
+                <input id="code" placeholder="Enter your code">
+              </form>
+              <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                <div class="col">TOTAL</div>
+                <div class="col text-right"> {{ calcularTotal() }} $</div>
+              </div>
+              <button class="btnCar" href="/checkout">CHECKOUT</button>
+            </div>
+          </div>
+
+        </div>
+        <ng-template #emptyCar>
+          <p>No hay elementos en el carrito.</p>
+        </ng-template>
+
 
       </div>
       <!--Footer-->
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
-        <button class="btn btn-primary">Checkout</button>
+        <button type="button" class="btnCar btn-outline-primary" data-dismiss="modal">Close</button>
+        <button class="btnCar btn-primary"><span>Checkout<i class="fa fa-long-arrow-right ml-1"></i></span></button>
       </div>
     </div>
   </div>

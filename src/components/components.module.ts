@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from '../app/app-routing.module';
 import { HelpfulLinksComponent } from './helpful-links/helpful-links.component';
+import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { HelpfulLinksComponent } from './helpful-links/helpful-links.component';
         NavbarComponent,
         FooterComponent,
         HelpfulLinksComponent,
+        CheckoutPageComponent,
       
     ],
     providers: [],

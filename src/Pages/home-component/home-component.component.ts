@@ -8,6 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import $ from 'jquery';
 interface bacanora {
   id: string;
+  stock: number;
   cantidad_compra: number;
   titulo: string;
   descripcion: string[];
@@ -22,37 +23,37 @@ export class HomeComponentComponent implements OnInit {
   listaItemsCarrito: bacanora[] | undefined;
   bacanorasList: bacanora[] = [
     {
-      id: '1', cantidad_compra: 1, titulo: 'Bacanora Blanco', descripcion: ['100% Artesanal', 'Doble Destilado'
+      id: '1', stock: 0, cantidad_compra: 1, titulo: 'Bacanora Blanco', descripcion: ['100% Artesanal', 'Doble Destilado'
         , '42 grados de alcohol', 'Cristalino', 'Contenido neto 750 ml Botella vidrio'
-        , '650 MXN', 'Envió Gratis'], imgUrl: "assets/images/Blaco-frente.png"
+        , '650', 'Envió Gratis'], imgUrl: "assets/images/Blaco-frente.png"
     },
     {
-      id: '2', cantidad_compra: 1, titulo: 'Bacanora Blanco Pachita', descripcion: ['100% Artesanal', 'Doble Destilado'
+      id: '2', stock: 0, cantidad_compra: 1, titulo: 'Bacanora Blanco Pachita', descripcion: ['100% Artesanal', 'Doble Destilado'
         , '42 grados de alcohol', 'Cristalino', 'Contenido neto 250 ml Botella vidrio'
-        , '350 MXN', 'Envió Gratis'], imgUrl: "assets/images/Blaco-frente.png"
+        , '350', 'Envió Gratis'], imgUrl: "assets/images/Blaco-frente.png"
     },
     {
-      id: '3', cantidad_compra: 1, titulo: 'Bacanora Con café y crema', descripcion: ['100% Artesanal', 'Doble Destilado'
+      id: '3', stock: 0, cantidad_compra: 1, titulo: 'Bacanora Con café y crema', descripcion: ['100% Artesanal', 'Doble Destilado'
         , '42 grados de alcohol', 'Crema de leche sabor café con bacanora artesanal', 'Contenido neto 750 ml Botella vidrio'
-        , '500 MXN', 'Envió Gratis'], imgUrl: "assets/images/Cafe-frente.png"
+        , '500', 'Envió Gratis'], imgUrl: "assets/images/Cafe-frente.png"
     },
     {
-      id: '4', cantidad_compra: 1, titulo: 'Bacanora Con café y crema pachita', descripcion: ['100% Artesanal', 'Doble Destilado'
+      id: '4', stock: 0, cantidad_compra: 1, titulo: 'Bacanora Con café y crema pachita', descripcion: ['100% Artesanal', 'Doble Destilado'
         , '42 grados de alcohol', 'Crema de leche sabor café con bacanora artesanal', 'Contenido neto 200 ml Botella vidrio'
-        , '300 MXN', 'Envió Gratis'], imgUrl: "assets/images/Blaco-frente.png"
+        , '300', 'Envió Gratis'], imgUrl: "assets/images/Blaco-frente.png"
     },
     //{ titulo: 'Cafe Con Bacanora', descripcion: "valor2", imgUrl: "assets/images/Cafe-frente.png" },
     {
-      id: '5', cantidad_compra: 1, titulo: 'Bacanora Reposado', descripcion: ['100% Artesanal', 'Doble Destilado'
+      id: '5', stock: 0, cantidad_compra: 1, titulo: 'Bacanora Reposado', descripcion: ['100% Artesanal', 'Doble Destilado'
         , '42 grados de alcohol', 'Bacanora Reposado  excelente toque y sabor', 'Contenido neto 750 ml Botella vidrio'
-        , '750 MXN', 'Envió Gratis'], imgUrl: "assets/images/Blaco-frente.png"
+        , '750', 'Envió Gratis'], imgUrl: "assets/images/Blaco-frente.png"
     },
     /*{ titulo: 'Bacanora Blanco', descripcion: "valor2", imgUrl: "assets/images/Blaco-frente.png" },
     { titulo: 'Cafe Con Bacanora', descripcion: "valor2", imgUrl: "assets/images/Cafe-frente.png" },*/
     {
-      id: '6', cantidad_compra: 1, titulo: 'Bacanora Reposado pachita', descripcion: ['100% Artesanal', 'Doble Destilado'
+      id: '6', stock: 0, cantidad_compra: 1, titulo: 'Bacanora Reposado pachita', descripcion: ['100% Artesanal', 'Doble Destilado'
         , '42 grados de alcohol', 'Bacanora Reposado  excelente toque y sabor', 'Contenido neto 200 ml Botella vidrio'
-        , '400 MXN', 'Envió Gratis'], imgUrl: "assets/images/Cafe-frente.png"
+        , '400', 'Envió Gratis'], imgUrl: "assets/images/Cafe-frente.png"
     },
 
   ];
@@ -71,6 +72,7 @@ export class HomeComponentComponent implements OnInit {
 
     let itemCarrito: bacanora = {
       id: botellaEncontrada.id,
+      stock: botellaEncontrada.stock,
       cantidad_compra: botellaEncontrada.cantidad_compra,
       titulo: botellaEncontrada.titulo,
       descripcion: botellaEncontrada.descripcion,
@@ -101,7 +103,18 @@ export class HomeComponentComponent implements OnInit {
 
 
   }
-  public calcularTotal():String {
+  public eliminarElementoPorId(id: String): void {
+    console.log("entro");
+    let itemsActuales = localStorage.getItem('carrito');
+    let carrito: any[] = itemsActuales ? JSON.parse(itemsActuales) : [];
+    const indexEliminar = carrito.findIndex(item => item.id == id);
+    if (indexEliminar !== -1) {
+      carrito.splice(indexEliminar, 1);
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      this.listaItemsCarrito = carrito;
+    }
+  }
+  public calcularTotal(): String {
     if (localStorage.getItem('carrito') !== null) {
       let carritoStorage = localStorage.getItem('carrito') as string;
       let carrito: bacanora[] = JSON.parse(carritoStorage);
@@ -112,7 +125,7 @@ export class HomeComponentComponent implements OnInit {
         //const precioIndex = producto.descripcion.findIndex(item => item.startsWith('Contenido neto'));
         const precioTexto = producto.descripcion[producto.descripcion.length - 2];
         //console.log('Precio original:', precioTexto);
-        const precioNumerico = parseFloat(precioTexto.replace(/[^\d.]/g, ''));
+        const precioNumerico = parseFloat(precioTexto);
         //console.log('Precio numérico:', precioNumerico);
         total += producto.cantidad_compra * precioNumerico;
       });
@@ -121,13 +134,52 @@ export class HomeComponentComponent implements OnInit {
       return total.toString();
     }
 
+
+  }
+  public calcularSubTotal(id: string): String {
+    if (localStorage.getItem('carrito') !== null) {
+      let carritoStorage = localStorage.getItem('carrito') as string;
+      let carrito: bacanora[] = JSON.parse(carritoStorage);
+      let total: number = 0;
+      const bacanoraExistente = carrito.find(bacanora => bacanora.id === id);
+      const precioTexto = bacanoraExistente.descripcion[bacanoraExistente.descripcion.length - 2];
+      const precioNumerico = parseFloat(precioTexto);
+      total = bacanoraExistente.cantidad_compra * precioNumerico;
+      //console.log(bacanoraExistente.cantidad_compra);
+      return total.toString();
+    }
+
   }
   private buscarBacanoraPorId(id: string): bacanora | undefined {
     return this.bacanorasList.find(bacanora => bacanora.id === id);
   }
+  restarCantidad(id: string): void {
+    console.log("entro restar");
+    if (localStorage.getItem('carrito') !== null){
+      let carritoStorage = localStorage.getItem('carrito') as string;
+      let carrito: bacanora[] = JSON.parse(carritoStorage);
+      const bacanoraExistente = carrito.find(bacanora => bacanora.id === id);
+      bacanoraExistente.cantidad_compra --;
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      this.listaItemsCarrito = carrito;
+      
+    } 
+  }
+  sumarCantidad(id: string): void {
+    console.log("entro sumar id",id);
+    if (localStorage.getItem('carrito') !== null){
+      let carritoStorage = localStorage.getItem('carrito') as string;
+      let carrito: bacanora[] = JSON.parse(carritoStorage);
+      const bacanoraExistente = carrito.find(bacanora => bacanora.id === id);
+      bacanoraExistente.cantidad_compra ++;
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      this.listaItemsCarrito = carrito;
+      
+    } 
+  }
 
   constructor(
-    private spinner: NgxSpinnerService, private sanitizer: DomSanitizer,
+    private spinner: NgxSpinnerService, private sanitizer: DomSanitizer, 
 
   ) { }
 
