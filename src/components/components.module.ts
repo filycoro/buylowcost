@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OwlModule } from 'ngx-owl-carousel';  
+import { OwlModule } from 'ngx-owl-carousel';
 
 // Components
 import { SliderComponent } from './slider/slider.component';
@@ -28,11 +28,10 @@ import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
         NavbarComponent,
         FooterComponent,
         HelpfulLinksComponent,
-        CheckoutPageComponent,
-      
+
     ],
     providers: [],
  })
- 
+
  export class ComponentsModule {
  }

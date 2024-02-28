@@ -18,6 +18,7 @@ import { TrukingPageComponent } from 'src/Pages/home-component/truking-page/truk
 import { QuotesTruckigComponent } from 'src/Pages/home-component/quotes-truckig/quotes-truckig.component';
 import { PartnershipsComponent } from 'src/Pages/Partnerships/Partnerships.component';
 import { LocationsComponent } from 'src/Pages/locations/locations.component';
+import { CheckoutPageComponent } from 'src/components/checkout-page/checkout-page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LocationsComponent } from 'src/Pages/locations/locations.component';
     TrukingPageComponent,
     QuotesTruckigComponent,
     PartnershipsComponent,
-    LocationsComponent
+    LocationsComponent,
+    CheckoutPageComponent
   ],
   imports: [
     BrowserModule,
