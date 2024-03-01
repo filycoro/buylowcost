@@ -82,11 +82,13 @@
 
 .title-section {
     font-family: "roboto-bold";
-    background-color: $gray-dark;
+    background: linear-gradient(190deg, #d31317, #28191bf0);
+    text-align: center;
     h1 {
         font-size: 1.2rem;
         line-height: 3.4rem;
         margin-bottom: 0;
+
         small {
             float: right;
         }
@@ -101,11 +103,11 @@
     min-height: 57rem;
     padding-top: 8rem;
     .card {
-        margin: 0 auto;
+        width: 100%;
         cursor: pointer;
         border: none;
-        background-color: transparent;
-        color: $blanco;
+        background-color: white;
+        color: Black;
         .card-icon {
             height: 6rem;
             width: 6rem;
@@ -264,4 +266,33 @@
 }
 .color-3 {
     color: #bc2132;
+}
+
+
+.cloud{
+  margin-top:70px;
+  width:350px;
+  height:120px;
+  background:#ECEFF1;
+  box-shadow: 10px 10px rgba(0,0,0,0.2);
+  border-radius:100px;
+}
+.cloud::after, .cloud::before{
+   content:"";
+   position:relative;
+   display:inline-block;
+   background:inherit;
+   border-radius:inherit;
+}
+.cloud::after{
+   width:100px;
+   height:100px;
+   top:-220px;
+   left:50px;
+}
+.cloud::before{
+   width:180px;
+   height:180px;
+   top: -70px;
+   left:130px;
 }
